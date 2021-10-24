@@ -14,7 +14,7 @@ import java.util.List;
 import br.com.erick.ceep.R;
 import br.com.erick.ceep.model.Nota;
 
-public class ListaNotasAdapter extends RecyclerView.Adapter {
+public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.NotaViewHolder> {
 
     private List<Nota> notas;
     private Context context;
@@ -26,16 +26,15 @@ public class ListaNotasAdapter extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListaNotasAdapter.NotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_nota, parent, false);
         return new NotaViewHolder(viewCriada);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ListaNotasAdapter.NotaViewHolder holder, int position) {
         Nota nota = notas.get(position);
-        NotaViewHolder notaViewHolder = (NotaViewHolder) holder;
-        notaViewHolder.vincula(nota);
+        holder.vincula(nota);
     }
 
     @Override
