@@ -42,10 +42,10 @@ public class ListaNotasAdapter extends BaseAdapter {
         View renderedView = LayoutInflater.from(context).inflate(R.layout.item_nota, viewGroup, false);
         Nota note = notas.get(position);
 
-        TextView title = renderedView.findViewById(R.id.note_item_title);
+        TextView title = renderedView.findViewById(R.id.item_nota_titulo);
         title.setText(note.getTitulo());
 
-        TextView descricao = renderedView.findViewById(R.id.note_item_description);
+        TextView descricao = renderedView.findViewById(R.id.item_nota_descricao);
         descricao.setText(note.getDescricao());
 
         return renderedView;

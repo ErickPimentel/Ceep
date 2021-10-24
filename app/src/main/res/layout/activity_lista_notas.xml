@@ -10,7 +10,7 @@
         android:id="@+id/listView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/note_list_add_note"
+        app:layout_constraintBottom_toTopOf="@id/lista_notas_adicionar_nota"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,12 +20,12 @@
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:background="@drawable/fundo_gradiente_insere_nota"
-        app:layout_constraintBottom_toTopOf="@id/note_list_add_note"
+        app:layout_constraintBottom_toTopOf="@id/lista_notas_adicionar_nota"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/note_list_add_note"
+        android:id="@+id/lista_notas_adicionar_nota"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
