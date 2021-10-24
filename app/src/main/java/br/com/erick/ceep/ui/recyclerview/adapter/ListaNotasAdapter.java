@@ -34,11 +34,8 @@ public class ListaNotasAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Nota nota = notas.get(position);
-        TextView titulo = holder.itemView.findViewById(R.id.item_nota_titulo);
-        titulo.setText(nota.getTitulo());
-
-        TextView descricao = holder.itemView.findViewById(R.id.item_nota_descricao);
-        descricao.setText(nota.getDescricao());
+        NotaViewHolder notaViewHolder = (NotaViewHolder) holder;
+        notaViewHolder.vincula(nota);
     }
 
     @Override
@@ -48,8 +45,18 @@ public class ListaNotasAdapter extends RecyclerView.Adapter {
 
     class NotaViewHolder extends RecyclerView.ViewHolder{
 
+        private final TextView titulo;
+        private final TextView descricao;
+
         public NotaViewHolder(@NonNull View itemView) {
             super(itemView);
+            titulo = itemView.findViewById(R.id.item_nota_titulo);
+            descricao = itemView.findViewById(R.id.item_nota_descricao);
+        }
+
+        public void vincula(Nota nota){
+            titulo.setText(nota.getTitulo());
+            descricao.setText(nota.getDescricao());
         }
     }
 }
