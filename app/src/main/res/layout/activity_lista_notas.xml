@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.ListaNotasActivity">
 
-    <ListView
-        android:id="@+id/listView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_notas_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/lista_notas_adicionar_nota"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_nota" />
 
-    <View android:id="@+id/bottom_gradiente_note_list_background"
+    <View android:id="@+id/lista_notas_fundo_gradiente_inferior"
         android:layout_width="0dp"
         android:layout_height="5dp"
         android:background="@drawable/fundo_gradiente_insere_nota"
