@@ -1,7 +1,7 @@
 package br.com.erick.ceep.ui.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.CHAVE_NOTA;
+import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.CODIGO_RESULTADO_NOTA_CRIADA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import br.com.erick.ceep.R;
 import br.com.erick.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
 
-    public static final String CHAVE_NOTA = "nota";
-    public static final int CODIGO_RESULTADO_NOTA_CRIADA = 2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
