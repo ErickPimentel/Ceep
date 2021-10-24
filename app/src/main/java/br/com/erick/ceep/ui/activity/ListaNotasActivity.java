@@ -25,7 +25,7 @@ public class ListaNotasActivity extends AppCompatActivity {
         NotaDAO dao = new NotaDAO();
         dao.insere(new Nota("Primeira nota","Primeira descrição"));
 
-        List<Nota> todasNotas = dao.listAll();
+        List<Nota> todasNotas = dao.todos();
 
         listaNotas.setAdapter(new ListaNotasAdapter(this, todasNotas));
     }
