@@ -39,14 +39,19 @@ public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.No
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListaNotasAdapter.NotaViewHolder holder, int position) {
-        Nota nota = notas.get(position);
+    public void onBindViewHolder(@NonNull ListaNotasAdapter.NotaViewHolder holder, int posicao) {
+        Nota nota = notas.get(posicao);
         holder.vincula(nota);
     }
 
     @Override
     public int getItemCount() {
         return notas.size();
+    }
+
+    public void altera(int posicao, Nota nota) {
+        notas.set(posicao, nota);
+        notifyDataSetChanged();
     }
 
     class NotaViewHolder extends RecyclerView.ViewHolder{
@@ -63,7 +68,7 @@ public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.No
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onItemClickListener.onItemClick(nota);
+                    onItemClickListener.onItemClick(nota, getAdapterPosition());
                 }
             });
         }
