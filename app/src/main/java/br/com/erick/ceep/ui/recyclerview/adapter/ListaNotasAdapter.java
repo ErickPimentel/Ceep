@@ -53,6 +53,7 @@ public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.No
 
         private final TextView titulo;
         private final TextView descricao;
+        private Nota nota;
 
         public NotaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,12 +63,14 @@ public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.No
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onItemClickListener.onItemClick();
+                    onItemClickListener.onItemClick(nota);
                 }
             });
         }
 
         public void vincula(Nota nota){
+
+            this.nota = nota;
             preencheCampo(nota);
         }
 

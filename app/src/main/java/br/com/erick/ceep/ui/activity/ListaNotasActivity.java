@@ -55,8 +55,11 @@ public class ListaNotasActivity extends AppCompatActivity {
 
     private List<Nota> pegaTodasNotas() {
         NotaDAO dao = new NotaDAO();
-        List<Nota> todasNotas = dao.todos();
-        return todasNotas;
+
+        for (int i = 0; i < 10; i++) {
+            dao.insere(new Nota("Titulo " + (i+1), "Descricao " + (i+1)));
+        }
+        return dao.todos();
     }
 
     @Override
@@ -102,8 +105,8 @@ public class ListaNotasActivity extends AppCompatActivity {
         listaNotas.setAdapter(adapter);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick() {
-                Toast.makeText(ListaNotasActivity.this, "viewHolder na Activiy", Toast.LENGTH_SHORT).show();
+            public void onItemClick(Nota nota) {
+                Toast.makeText(ListaNotasActivity.this, nota.getTitulo(), Toast.LENGTH_SHORT).show();
             }
         });
     }
