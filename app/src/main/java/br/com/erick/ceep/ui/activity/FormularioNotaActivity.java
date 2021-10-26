@@ -1,7 +1,9 @@
 package br.com.erick.ceep.ui.activity;
 
 import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.CHAVE_NOTA;
+import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.CHAVE_POSICAO;
 import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.CODIGO_RESULTADO_NOTA_CRIADA;
+import static br.com.erick.ceep.ui.activity.NotaActivityConstantes.POSICAO_INVALIDA;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +20,6 @@ import br.com.erick.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
 
-    public static final int POSICAO_INVALIDA = -1;
-    public static final String CHAVE_POSICAO = "posicao";
     private int posicaoRecebida = POSICAO_INVALIDA;
     private TextView titulo;
     private TextView descricao;
