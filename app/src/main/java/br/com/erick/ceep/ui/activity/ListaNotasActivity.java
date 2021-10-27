@@ -86,8 +86,6 @@ public class ListaNotasActivity extends AppCompatActivity {
                 int posicaoRecebida = data.getIntExtra(CHAVE_POSICAO, POSICAO_INVALIDA);
                 if(ehPosicaoValida(posicaoRecebida)){
                     altera(notaRecebida, posicaoRecebida);
-                }else{
-                    Toast.makeText(this, "Ocorreu um problema na alteração da nota", Toast.LENGTH_SHORT).show();
                 }
             }
         }
