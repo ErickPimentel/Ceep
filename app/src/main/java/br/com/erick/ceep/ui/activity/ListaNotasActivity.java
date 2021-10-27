@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -24,6 +25,7 @@ import br.com.erick.ceep.dao.NotaDAO;
 import br.com.erick.ceep.model.Nota;
 import br.com.erick.ceep.ui.recyclerview.adapter.ListaNotasAdapter;
 import br.com.erick.ceep.ui.recyclerview.adapter.listener.OnItemClickListener;
+import br.com.erick.ceep.ui.recyclerview.helper.callback.NotaItemTouchHelperCallback;
 
 public class ListaNotasActivity extends AppCompatActivity {
 
@@ -129,6 +131,8 @@ public class ListaNotasActivity extends AppCompatActivity {
         RecyclerView listaNotas = findViewById(R.id.lista_notas_recyclerview);
         configuraAdapter(todasNotas, listaNotas);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new NotaItemTouchHelperCallback());
+        itemTouchHelper.attachToRecyclerView(listaNotas);
     }
 
     @NonNull
