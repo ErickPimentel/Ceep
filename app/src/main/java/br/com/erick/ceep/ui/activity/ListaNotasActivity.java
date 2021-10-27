@@ -63,10 +63,6 @@ public class ListaNotasActivity extends AppCompatActivity {
 
     private List<Nota> pegaTodasNotas() {
         NotaDAO dao = new NotaDAO();
-
-        for (int i = 0; i < 10; i++) {
-            dao.insere(new Nota("Titulo " + (i+1), "Descricao " + (i+1)));
-        }
         return dao.todos();
     }
 
